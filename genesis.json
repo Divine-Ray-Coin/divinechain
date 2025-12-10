@@ -1,8 +1,8 @@
 {
   "app_name": "divined",
   "app_version": "",
-  "genesis_time": "2025-12-01T13:25:37.345191Z",
-  "chain_id": "divine",
+  "genesis_time": "2025-12-10T07:19:48.277256Z",
+  "chain_id": "divine-1",
   "initial_height": 1,
   "app_hash": null,
   "app_state": {
@@ -19,44 +19,37 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "divine1uedzzkzr0tzwcs8w4c5psylyunc906a83eq8g7",
+          "address": "divine1ts98eu5v7sxhvz77geac5qf50hpu5vumeud2l6",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "divine1rrh23va806z8z077n9vlznsar77gyuvhpdvzcy",
+          "address": "divine1av9x2etg8sf526r09vtlv24nj56pmsjmw7z7zs",
           "pub_key": null,
           "account_number": "1",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "divine170zs93umefjqksfy8yyzz2fvclcqfnzqzezkna",
+          "address": "divine15t9spzgjrs84xfd9fg98em8gnpke58wa5r9dhq",
           "pub_key": null,
           "account_number": "2",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "divine1rqkr5ax9erw3tc2m0d5tcg007hv6l9vpjhcf9h",
+          "address": "divine17vuakxl3s4ls7v2dxp3z5z54zz7h099zyqmw4t",
           "pub_key": null,
           "account_number": "3",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "divine1qa4jc362aprccrrr7wrufn7kn5qahfla8cfneh",
+          "address": "divine13ss73apqlw34ev73w02yh32ga84vruh6rtwncj",
           "pub_key": null,
           "account_number": "4",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "divine1llwnx03eq7yyk0zcc4qt7rdqpkpu8jwft39n3k",
-          "pub_key": null,
-          "account_number": "5",
           "sequence": "0"
         }
       ]
@@ -71,25 +64,7 @@
       },
       "balances": [
         {
-          "address": "divine1qa4jc362aprccrrr7wrufn7kn5qahfla8cfneh",
-          "coins": [
-            {
-              "denom": "uDRC",
-              "amount": "50000000000000000"
-            }
-          ]
-        },
-        {
-          "address": "divine1rqkr5ax9erw3tc2m0d5tcg007hv6l9vpjhcf9h",
-          "coins": [
-            {
-              "denom": "uDRC",
-              "amount": "1500000000000000000"
-            }
-          ]
-        },
-        {
-          "address": "divine1rrh23va806z8z077n9vlznsar77gyuvhpdvzcy",
+          "address": "divine1ts98eu5v7sxhvz77geac5qf50hpu5vumeud2l6",
           "coins": [
             {
               "denom": "uDRC",
@@ -98,29 +73,38 @@
           ]
         },
         {
-          "address": "divine1uedzzkzr0tzwcs8w4c5psylyunc906a83eq8g7",
-          "coins": [
-            {
-              "denom": "uDRC",
-              "amount": "150000000000000000"
-            }
-          ]
-        },
-        {
-          "address": "divine170zs93umefjqksfy8yyzz2fvclcqfnzqzezkna",
-          "coins": [
-            {
-              "denom": "uDRC",
-              "amount": "150000000000000000"
-            }
-          ]
-        },
-        {
-          "address": "divine1llwnx03eq7yyk0zcc4qt7rdqpkpu8jwft39n3k",
+          "address": "divine13ss73apqlw34ev73w02yh32ga84vruh6rtwncj",
           "coins": [
             {
               "denom": "uDRC",
               "amount": "3000000000000000000"
+            }
+          ]
+        },
+        {
+          "address": "divine15t9spzgjrs84xfd9fg98em8gnpke58wa5r9dhq",
+          "coins": [
+            {
+              "denom": "uDRC",
+              "amount": "150000000000000000"
+            }
+          ]
+        },
+        {
+          "address": "divine1av9x2etg8sf526r09vtlv24nj56pmsjmw7z7zs",
+          "coins": [
+            {
+              "denom": "uDRC",
+              "amount": "150000000000000000"
+            }
+          ]
+        },
+        {
+          "address": "divine17vuakxl3s4ls7v2dxp3z5z54zz7h099zyqmw4t",
+          "coins": [
+            {
+              "denom": "uDRC",
+              "amount": "1550000000000000000"
             }
           ]
         }
@@ -138,7 +122,9 @@
             {
               "denom": "uDRC",
               "exponent": 0,
-              "aliases": ["microDRC"]
+              "aliases": [
+                "microDRC"
+              ]
             },
             {
               "denom": "DRC",
@@ -234,7 +220,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "divine-validator-1",
+                  "moniker": "divine-validator-3",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -247,10 +233,10 @@
                 },
                 "min_self_delegation": "1",
                 "delegator_address": "",
-                "validator_address": "divinevaloper1uedzzkzr0tzwcs8w4c5psylyunc906a80z5c09",
+                "validator_address": "divinevaloper15t9spzgjrs84xfd9fg98em8gnpke58wa2c3jsm",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "i7GPheT8M08obj9AUo51l5MNWvbi3olD59U7AF1ZnjI="
+                  "key": "2Y6pvOUiWUxxdxtb0q7UtPjFH5RGt/nWFZFUnwINSuk="
                 },
                 "value": {
                   "denom": "uDRC",
@@ -258,7 +244,7 @@
                 }
               }
             ],
-            "memo": "7e492d12549320602cd7f07ec58a02a7f6893a35@192.168.2.49:26656",
+            "memo": "66303f22f9c0dc0bd9468faddab9b70e7f6b84c9@192.168.1.3:26656",
             "timeout_height": "0",
             "unordered": false,
             "timeout_timestamp": null,
@@ -270,7 +256,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AjS80qX223vEzaF+g6q4wmzbas9mm5SQXeLnn61gTaJL"
+                  "key": "Aoa0a7zKrhLCq1sBW9BU5lNPPpYW8EB9cF+fASKYRVvn"
                 },
                 "mode_info": {
                   "single": {
@@ -289,7 +275,71 @@
             "tip": null
           },
           "signatures": [
-            "+dgi2NWW/wcq58KlnBLW4FzKGTjK/PBG33xpPeaYmuwO69ZpdLaxqWOgr8EceAaD0Cq8SNWhxR2X7vitV+aPOw=="
+            "i+yNuomMDMxi/Z4bbCbAvi76QRmIbx2NSHGuXv+RL+h6BXrhBvO/0JRE/vlkjBJX4jjht/qDT2DUak9UdDWCUw=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "divine-validator-1",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "",
+                "validator_address": "divinevaloper1ts98eu5v7sxhvz77geac5qf50hpu5vum88e4cp",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "7EyYY8Ybrbr8nowkAdnL9Pe8e5ib7uCUV4H8S0Gohb4="
+                },
+                "value": {
+                  "denom": "uDRC",
+                  "amount": "150000000000000000"
+                }
+              }
+            ],
+            "memo": "86d02575f34f2eb9e05d0e5747d7f71f0e004ecd@192.168.1.3:26656",
+            "timeout_height": "0",
+            "unordered": false,
+            "timeout_timestamp": null,
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A3+44z7iRKOzquZx4l1ToDF8ewqzsnag1S7NB7cb9rY2"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "VF7+XjTMuYhwnb2bpGsQIJCy4ARWlU28BhQMlv3QQAguNiDtzHep3jRl/ogOyx+segqa+bJ6IVF7mKMB7XAQtA=="
           ]
         },
         {
@@ -311,10 +361,10 @@
                 },
                 "min_self_delegation": "1",
                 "delegator_address": "",
-                "validator_address": "divinevaloper1rrh23va806z8z077n9vlznsar77gyuvhlkcall",
+                "validator_address": "divinevaloper1av9x2etg8sf526r09vtlv24nj56pmsjms9kp9t",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "0opdKatzUi0guf8ij00+qGHhIJlsNNa8BfGj8jy9YF0="
+                  "key": "zIYTzXBpWUVhurtxB4ap0nVzYMDqD5wGzOlA/bmRnQU="
                 },
                 "value": {
                   "denom": "uDRC",
@@ -322,7 +372,7 @@
                 }
               }
             ],
-            "memo": "f124e9b985dbff658cf7dd2c2ef506d0f8e74acb@192.168.2.49:26656",
+            "memo": "f3e796bb4ce71b292e17d68a10bc8bab902b6f52@192.168.1.3:26656",
             "timeout_height": "0",
             "unordered": false,
             "timeout_timestamp": null,
@@ -334,7 +384,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "Azxqoxvqfr+9Jxlw15FGvs/TB0zrwQYHG8eZw4DJQ2z+"
+                  "key": "AzT9F0ivodptK3UnE4QyZgE7DN8s8iofS3EY3fmmNShr"
                 },
                 "mode_info": {
                   "single": {
@@ -353,71 +403,7 @@
             "tip": null
           },
           "signatures": [
-            "jsk3dLrcqEfHTeXGS049LN4tLHQxGpWmpe7hWVMVeetcnZNQLOQIUzlNT6hiK+9QB6WUszDNfkNQ8LX/giizvw=="
-          ]
-        },
-        {
-          "body": {
-            "messages": [
-              {
-                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
-                "description": {
-                  "moniker": "divine-validator-3",
-                  "identity": "",
-                  "website": "",
-                  "security_contact": "",
-                  "details": ""
-                },
-                "commission": {
-                  "rate": "0.100000000000000000",
-                  "max_rate": "0.200000000000000000",
-                  "max_change_rate": "0.010000000000000000"
-                },
-                "min_self_delegation": "1",
-                "delegator_address": "",
-                "validator_address": "divinevaloper170zs93umefjqksfy8yyzz2fvclcqfnzquzkf5x",
-                "pubkey": {
-                  "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "jFAQads2tTwvhhVb+/j7l1kwvqsaQyGolrr1VPkdA7Q="
-                },
-                "value": {
-                  "denom": "uDRC",
-                  "amount": "150000000000000000"
-                }
-              }
-            ],
-            "memo": "f5685246f29e71a57d4d6542b9fd11bf79fbf76c@192.168.2.49:26656",
-            "timeout_height": "0",
-            "unordered": false,
-            "timeout_timestamp": null,
-            "extension_options": [],
-            "non_critical_extension_options": []
-          },
-          "auth_info": {
-            "signer_infos": [
-              {
-                "public_key": {
-                  "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AkOWTfFhVg31rriDwT2MQH5El/3HQBznWRjUmbSnPaXK"
-                },
-                "mode_info": {
-                  "single": {
-                    "mode": "SIGN_MODE_DIRECT"
-                  }
-                },
-                "sequence": "0"
-              }
-            ],
-            "fee": {
-              "amount": [],
-              "gas_limit": "200000",
-              "payer": "",
-              "granter": ""
-            },
-            "tip": null
-          },
-          "signatures": [
-            "Yw1QgdBiQ3YRGSE7r1EuhrnkBddADDW/1dczhK9zGXQ1Rb1o8joGAAH9pa0ufKCDld8xpBHzCsIM/eLxYiXtvg=="
+            "1GJrpCnVpfJhWbBVon05xNU296FgmmGmZPB2TRjLH2Fq3/erELgkEbkMgRan/DA6L75jGiQSae82X7FhiiNQ1w=="
           ]
         }
       ]
