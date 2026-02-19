@@ -1,0 +1,13 @@
+syntax = "proto3";
+package divine.collectibles.v1;
+
+option go_package = "divine/x/collectibles/types";
+
+// Class defines the Class message.
+message Class {
+  string class_id = 1;
+  string name = 2;
+  string symbol = 3;
+  string uri = 4;
+  string admin = 5;
+}

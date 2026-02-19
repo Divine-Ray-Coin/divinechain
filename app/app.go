@@ -46,6 +46,7 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v10/modules/core/keeper"
 
 	"divine/docs"
+	collectiblesmodulekeeper "divine/x/collectibles/keeper"
 )
 
 const (
@@ -97,6 +98,7 @@ type App struct {
 	ICAHostKeeper       icahostkeeper.Keeper
 	TransferKeeper      ibctransferkeeper.Keeper
 
+	CollectiblesKeeper collectiblesmodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// simulation manager
@@ -176,6 +178,7 @@ func New(
 		&app.ConsensusParamsKeeper,
 		&app.CircuitBreakerKeeper,
 		&app.ParamsKeeper,
+		&app.CollectiblesKeeper,
 	); err != nil {
 		panic(err)
 	}
@@ -191,7 +194,7 @@ func New(
 	if err := app.registerIBCModules(appOpts); err != nil {
 		panic(err)
 	}
-
+	// app.RegisterUpgradeHandlers()
 	/****  Module Options ****/
 
 	// create the simulation manager and define the order of the modules for deterministic simulations

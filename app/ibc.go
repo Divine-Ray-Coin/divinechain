@@ -1,6 +1,9 @@
 package app
 
 import (
+	collectiblesmodule "divine/x/collectibles/module"
+	collectiblesmoduletypes "divine/x/collectibles/types"
+
 	"cosmossdk.io/core/appmodule"
 	storetypes "cosmossdk.io/store/types"
 	"github.com/cosmos/cosmos-sdk/codec"
@@ -117,6 +120,8 @@ func (app *App) registerIBCModules(appOpts servertypes.AppOptions) error {
 	ibcv2Router := ibcapi.NewRouter().
 		AddRoute(ibctransfertypes.PortID, transferStackV2)
 
+	collectiblesIBCModule := collectiblesmodule.NewIBCModule(app.appCodec, app.CollectiblesKeeper)
+	ibcRouter.AddRoute(collectiblesmoduletypes.ModuleName, collectiblesIBCModule)
 	// this line is used by starport scaffolding # ibc/app/module
 
 	app.IBCKeeper.SetRouter(ibcRouter)

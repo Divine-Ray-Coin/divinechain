@@ -1,0 +1,14 @@
+syntax = "proto3";
+package divine.collectibles.v1;
+
+option go_package = "divine/x/collectibles/types";
+
+// CollectiblesPacketData defines the Collectibles data packet.
+message CollectiblesPacketData {
+  oneof packet {
+    NoData noData = 1;
+  }
+}
+
+// NoData defines an empty data packet.
+message NoData {}

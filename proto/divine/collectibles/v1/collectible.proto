@@ -1,0 +1,13 @@
+syntax = "proto3";
+package divine.collectibles.v1;
+
+option go_package = "divine/x/collectibles/types";
+
+// Collectible defines the Collectible message.
+message Collectible {
+  string class_id = 1;
+  string id = 2;
+  string uri = 3;
+  string owner = 4;
+  bool locked = 5;
+}

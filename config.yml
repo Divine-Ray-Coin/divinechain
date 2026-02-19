@@ -1,13 +1,25 @@
 version: 1
 validation: sovereign
-default_denom: udrc
+default_denom: uDRC
 genesis:
-  chain_id: "divine"
+  chain_id: "divine-1"
   app_state:
     staking:
       params:
         bond_denom: "uDRC"
         unbonding_time: "1814400s"
+    gov:
+      params:
+        voting_period: "3600s"
+        max_deposit_period: "3600s"
+        expedited_voting_period: "1800s"
+        min_deposit: 
+          - denom: "uDRC"
+            amount: "10000000"
+        quorum: "0.334000000000000000"
+        threshold: "0.500000000000000000"
+        veto_threshold: "0.334000000000000000"
+
     # The bank module also has a default base denom
     bank:
       denom_metadata:
@@ -26,56 +38,40 @@ accounts:
 - name: divine-validator-1
   coins:
   - 150000000000000000uDRC
+  address: divine1ts98eu5v7sxhvz77geac5qf50hpu5vumeud2l6
 - name: divine-validator-2
   coins:
   - 150000000000000000uDRC
+  address: divine1av9x2etg8sf526r09vtlv24nj56pmsjmw7z7zs
 - name: divine-validator-3
   coins:
   - 150000000000000000uDRC
+  address: divine15t9spzgjrs84xfd9fg98em8gnpke58wa5r9dhq
 - name: divine-ico-wallet
   coins:
-  - 1500000000000000000uDRC
-- name: faucet-account
-  coins:
-  - 50000000000000000uDRC
+  - 1550000000000000000uDRC
+  address: divine17vuakxl3s4ls7v2dxp3z5z54zz7h099zyqmw4t
 - name: management-account
   coins:
   - 3000000000000000000uDRC
+  address: divine13ss73apqlw34ev73w02yh32ga84vruh6rtwncj
 client:
   openapi:
     path: docs/static/openapi.json
-faucet:
-  name: faucet-account
-  coins:
-  - 5000000uDRC
-  coins_max:
-  - 100000000uDRC
-  port: 4500
-  rate_limit_window: 3600s
 validators:
-- name: divine-validator-1
-  bonded: 150000000000000000uDRC
-  home: "/Users/kaustavchakraborty/Projects/DivineRay/blockchain/config/test/validator1"
+- name: divine-validator-3
+  bonded: 149999990000000000uDRC
+  home: "/Users/kaustavchakraborty/Projects/DivineRay/blockchain-prod/config/prod/validator3"
   app:
     minimum-commission-rate: "0.05"
-    minimum-gas-prices: "0.0025DRC"
-    pruning: "nothing"
+    minimum-gas-prices: "2500uDRC"
+    pruning: "default"
   config:
-    moniker: "divine-validator-1"
+    moniker: "divine-validator-3"
   client:
       output: "json"
   gentx:
-    moniker: "divine-validator-1"
-    keyring-backend: "os"
-    chain-id: "divine"
-    keyring-dir: "/Users/kaustavchakraborty/Projects/DivineRay/blockchain/config/test/keys"
-# - name: divine-validator-2
-#   bonded: 150000000000000000uDRC
-#   app:
-#     minimum-commission-rate: "0.05"
-#     minimum-gas-prices: "0.0025DRC"
-# - name: divine-validator-3
-#   bonded: 150000000000000000uDRC
-#   app:
-#     minimum-commission-rate: "0.05"
-#     minimum-gas-prices: "0.0025DRC"
+    moniker: "divine-validator-3"
+    keyring-backend: "test"
+    chain-id: "divine-1"
+    keyring-dir: "/Users/kaustavchakraborty/Projects/DivineRay/blockchain-prod/config/prod/keys"

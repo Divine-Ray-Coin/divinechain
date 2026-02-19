@@ -1,0 +1,220 @@
+syntax = "proto3";
+
+package divine.collectibles.v1;
+
+import "amino/amino.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "divine/collectibles/v1/class.proto";
+import "divine/collectibles/v1/collectible.proto";
+import "divine/collectibles/v1/params.proto";
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+
+option go_package = "divine/x/collectibles/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/params";
+  }
+
+  // Class Queries a list of Class items.
+  rpc Class(QueryClassRequest) returns (QueryClassResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/class/{class_id}";
+  }
+
+  // Classes Queries a list of Classes items.
+  rpc Classes(QueryClassesRequest) returns (QueryClassesResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/classes";
+  }
+
+  // Collectible Queries a list of Collectible items.
+  rpc Collectible(QueryCollectibleRequest) returns (QueryCollectibleResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/collectible/{class_id}/{token_id}";
+  }
+
+  // CollectibleByUri Queries a list of CollectibleByUri items.
+  rpc CollectibleByUri(QueryCollectibleByUriRequest) returns (QueryCollectibleByUriResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/collectible_by_uri/{uri}";
+  }
+
+  // CollectiblesByClass Queries a list of CollectiblesByClass items.
+  rpc CollectiblesByClass(QueryCollectiblesByClassRequest) returns (QueryCollectiblesByClassResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/collectibles_by_class/{class_id}";
+  }
+
+  // CollectiblesByOwner Queries a list of CollectiblesByOwner items.
+  rpc CollectiblesByOwner(QueryCollectiblesByOwnerRequest) returns (QueryCollectiblesByOwnerResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/collectibles_by_owner/{owner}";
+  }
+
+  // OwnerOf Queries a list of OwnerOf items.
+  rpc OwnerOf(QueryOwnerOfRequest) returns (QueryOwnerOfResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/owner_of/{class_id}/{token_id}";
+  }
+
+  // Balance Queries a list of Balance items.
+  rpc Balance(QueryBalanceRequest) returns (QueryBalanceResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/balance/{class_id}/{owner}";
+  }
+
+  // TotalSupply Queries a list of TotalSupply items.
+  rpc TotalSupply(QueryTotalSupplyRequest) returns (QueryTotalSupplyResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/total_supply/{class_id}";
+  }
+
+  // CollectiblesUri Queries a list of CollectiblesUri items.
+  rpc CollectiblesUri(QueryCollectiblesUriRequest) returns (QueryCollectiblesUriResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/collectibles_uri/{class_id}/{token_id}";
+  }
+
+  // ClassAdmin Queries a list of ClassAdmin items.
+  rpc ClassAdmin(QueryClassAdminRequest) returns (QueryClassAdminResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/class_admin/{class_id}";
+  }
+
+  // Authority Queries a list of Authority items.
+  rpc Authority(QueryAuthorityRequest) returns (QueryAuthorityResponse) {
+    option (google.api.http).get = "/divine/collectibles/v1/authority";
+  }
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
+
+// QueryClassRequest defines the QueryClassRequest message.
+message QueryClassRequest {
+  string class_id = 1;
+}
+
+// QueryClassResponse defines the QueryClassResponse message.
+message QueryClassResponse {
+  Class class = 1;
+}
+
+// QueryClassesRequest defines the QueryClassesRequest message.
+message QueryClassesRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryClassesResponse defines the QueryClassesResponse message.
+message QueryClassesResponse {
+  repeated Class classes = 1;
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryCollectibleRequest defines the QueryCollectibleRequest message.
+message QueryCollectibleRequest {
+  string class_id = 1;
+  string token_id = 2;
+}
+
+// QueryCollectibleResponse defines the QueryCollectibleResponse message.
+message QueryCollectibleResponse {
+  Collectible collectible = 1;
+}
+
+// QueryCollectibleByUriRequest defines the QueryCollectibleByUriRequest message.
+message QueryCollectibleByUriRequest {
+  string uri = 1;
+}
+
+// QueryCollectibleByUriResponse defines the QueryCollectibleByUriResponse message.
+message QueryCollectibleByUriResponse {
+  Collectible collectible = 1;
+}
+
+// QueryCollectiblesByClassRequest defines the QueryCollectiblesByClassRequest message.
+message QueryCollectiblesByClassRequest {
+  string class_id = 1;
+  cosmos.base.query.v1beta1.PageRequest pagination = 2;
+}
+
+// QueryCollectiblesByClassResponse defines the QueryCollectiblesByClassResponse message.
+message QueryCollectiblesByClassResponse {
+  repeated Collectible collectibles = 1;
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryCollectiblesByOwnerRequest defines the QueryCollectiblesByOwnerRequest message.
+message QueryCollectiblesByOwnerRequest {
+  string owner = 1;
+  cosmos.base.query.v1beta1.PageRequest pagination = 2;
+}
+
+// QueryCollectiblesByOwnerResponse defines the QueryCollectiblesByOwnerResponse message.
+message QueryCollectiblesByOwnerResponse {
+  repeated Collectible collectibles = 1;
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryOwnerOfRequest defines the QueryOwnerOfRequest message.
+message QueryOwnerOfRequest {
+  string class_id = 1;
+  string token_id = 2;
+}
+
+// QueryOwnerOfResponse defines the QueryOwnerOfResponse message.
+message QueryOwnerOfResponse {
+  string owner = 1;
+}
+
+// QueryBalanceRequest defines the QueryBalanceRequest message.
+message QueryBalanceRequest {
+  string class_id = 1;
+  string owner = 2;
+}
+
+// QueryBalanceResponse defines the QueryBalanceResponse message.
+message QueryBalanceResponse {
+  uint64 amount = 1;
+}
+
+// QueryTotalSupplyRequest defines the QueryTotalSupplyRequest message.
+message QueryTotalSupplyRequest {
+  string class_id = 1;
+}
+
+// QueryTotalSupplyResponse defines the QueryTotalSupplyResponse message.
+message QueryTotalSupplyResponse {
+  uint64 supply = 1;
+}
+
+// QueryCollectiblesUriRequest defines the QueryCollectiblesUriRequest message.
+message QueryCollectiblesUriRequest {
+  string class_id = 1;
+  string token_id = 2;
+}
+
+// QueryCollectiblesUriResponse defines the QueryCollectiblesUriResponse message.
+message QueryCollectiblesUriResponse {
+  string uri = 1;
+}
+
+// QueryClassAdminRequest defines the QueryClassAdminRequest message.
+message QueryClassAdminRequest {
+  string class_id = 1;
+}
+
+// QueryClassAdminResponse defines the QueryClassAdminResponse message.
+message QueryClassAdminResponse {
+  string admin = 1;
+}
+
+// QueryAuthorityRequest defines the QueryAuthorityRequest message.
+message QueryAuthorityRequest {}
+
+// QueryAuthorityResponse defines the QueryAuthorityResponse message.
+message QueryAuthorityResponse {
+  string address = 1;
+}

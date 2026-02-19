@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package divine.collectibles;
+
+option go_package = "divine/x/collectibles/types";
+
+message CollectibleIndex {
+  string class_id = 1;
+  string collectible_id = 2;
+}
